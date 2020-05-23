@@ -1,0 +1,29 @@
+<h1>Query Results</h1>
+<% if(foundFood.length == 0){ %>
+  <p>Food Not Found</p>
+<%} else { %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Unit</th>
+    <th>Calories</th>
+    <th>Carbs</th>
+    <th>Fat</th>
+    <th>Protein</th>
+    <th>Salt</th>
+    <th>Sugar</th>
+  </tr>
+  <% foundFood.forEach(function(food){ %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.unit %></td>
+      <td><%= food.calories %></td>
+      <td><%= food.carbs %></td>
+      <td><%= food.fat %></td>
+      <td><%= food.protein %></td>
+      <td><%= food.salt %></td>
+      <td><%= food.sugar %></td>
+    </tr>
+  <% }) %>
+</table>
+<% } %>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+    <h1> Count Calories </h1>
+    <% if(names == null){ %>
+      <p>No Food Selected</p>
+    <%} else { %>
+      <h3>Totals for: </h3>
+      <ul>
+        <% names.forEach(function(name){ %>
+          <li><%= name %></li>
+        <% }) %>
+      </ul>
+      <table>
+        <tr>
+          <th></th>
+          <th>Calories</th>
+          <th>Carbs</th>
+          <th>Fat</th>
+          <th>Protein</th>
+          <th>Salt</th>
+          <th>Sugar</th>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td><%= total.calories %></td>
+          <td><%= total.carbs %></td>
+          <td><%= total.fat %></td>
+          <td><%= total.protein %></td>
+          <td><%= total.salt %></td>
+          <td><%= total.sugar %></td>
+        </tr>
+      </table>
+    <% } %>
+  </body>
+</html>

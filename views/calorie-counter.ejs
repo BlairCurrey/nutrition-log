@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+
+    <h1> Count Calories </h1>
+    <% if(foundFood.length == 0){ %>
+      <p>Food Not Found</p>
+    <%} else { %>
+      <p>Choose the foods to include in the count:</p>
+      <div>
+        <form method="POST" action="/calorie-counter-add">
+          <% foundFood.forEach(function(food){ %>
+            <div>
+              <input type="checkbox" name="name" value = "<%= food.name %>"">
+              <label for="name"><%= food.name %></label>
+            </div>
+          <% }) %>
+          <div>
+            <button type="submit">Count</button>
+          </div>
+        </form>
+      </div>
+    <% } %>
+  </body>
+</html>

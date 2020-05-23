@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+    <!-- Include search results -->
+    <%- include('partials/search-results') %>
+    <!-- Filled in forms and update button routed to update SQL query route if search found -->
+    <% if(foundFood.length > 0){ %>
+      <h3>Modify: "<%= foundFood[0].name %>" </h3>
+      <form method="POST" action="/update?_method=PUT">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" value="<%= foundFood[0].name %>"/>
+        <label for="unit">Unit</label>
+        <input id="unit" type="text" name="unit" value="<%= foundFood[0].unit %>"/>
+        <label for="calories">Calories</label>
+        <input id="calories" type="number" name="calories" value="<%= foundFood[0].calories %>" />
+        <label for="carbs">Carbs</label>
+        <input id="carbs" type="number" name="carbs" value="<%= foundFood[0].carbs %>" />
+        <label for="fat">Fat</label>
+        <input id="fat" type="number" name="fat" value="<%= foundFood[0].fat %>" />
+        <label for="protein">Protein</label>
+        <input id="protein" type="number" name="protein" value="<%= foundFood[0].protein %>" />
+        <label for="salt">Salt</label>
+        <input id="salt" type="number" name="salt" value="<%= foundFood[0].sugar %>" />
+        <label for="sugar">Sugar</label>
+        <input id="sugar" type="number" name="sugar" value="<%= foundFood[0].salt %>" />
+        <input type="submit" value="Update" />
+      </form>
+    <% } %>
+    <a href="javascript:history.back()">Previous Page</a>
+  </body>
+ </html>

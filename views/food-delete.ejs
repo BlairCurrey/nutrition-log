@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+
+    <h1> Delete Food </h1>
+    <p>What food do you want to delete?</p>
+    <form method="GET" action="/search-delete">
+      <label for="name">Food Name</label>
+      <input id="search-box" type="text" name="keyword">
+      <input type="submit" value="Search" >
+    </form>
+  </body>
+</html>

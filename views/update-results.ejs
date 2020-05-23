@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+    <h1>Food Updated</h1>
+    <h3>You updated:</h3>
+    <ul>
+      <li>Name: <%= food.name %></li>
+      <li>Unit: <%= food.unit %></li>
+      <li>Calories: <%= food.calories %></li>
+      <li>Carbs: <%= food.carbs %></li>
+      <li>Fat: <%= food.fat %></li>
+      <li>Protein: <%= food.protein %></li>
+      <li>Salt: <%= food.salt %></li>
+      <li>Sugar: <%= food.sugar %></li>
+    </ul>
+    <a href="javascript:history.back()">Previous Page</a>
+  </body>
+ </html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Include header info -->
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('partials/navbar') %>
+
+    <h1> Add Food </h1>
+    <form method="POST" action="/add">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name"/>
+      <label for="unit">Unit</label>
+      <input id="unit" type="text" name="unit"/>
+      <label for="calories">Calories</label>
+      <input id="calories" type="number" name="calories" value="0" />
+      <label for="carbs">Carbs</label>
+      <input id="carbs" type="number" name="carbs" value="0" />
+      <label for="fat">Fat</label>
+      <input id="fat" type="number" name="fat" value="0" />
+      <label for="protein">Protein</label>
+      <input id="protein" type="number" name="protein" value="0" />
+      <label for="salt">Salt</label>
+      <input id="salt" type="number" name="salt" value="0" />
+      <label for="sugar">Sugar</label>
+      <input id="sugar" type="number" name="sugar" value="0" />
+      <input type="submit" value="Add" />
+    </form>
+  </body>
+</html>
