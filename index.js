@@ -22,7 +22,7 @@ global.db = db;
 app.use(body_parser.urlencoded({ extended: true }));
 app.use(method_override('_method'));
 require("./routes/main.js")(app);
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.set("views",__dirname + "/views");
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
