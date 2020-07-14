@@ -173,7 +173,6 @@ module.exports = function(app) {
 
     app.post("/calorie-counter-add",function(req, res) {
         let names = [req.body.name].flat();
-        // let names = [req.body.name];
         console.log(names)
         let sqlquery = `SELECT SUM(calories) as calories,
                                SUM(carbs) as carbs,
