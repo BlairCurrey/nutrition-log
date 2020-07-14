@@ -3,7 +3,7 @@ const body_parser = require("body-parser");
 const method_override = require("method-override");
 const mysql = require ("mysql");
 const app = express();
-const port = 8089;
+const port = process.env.PORT || 8089;
 
 const db = mysql.createConnection({
     host     : 'localhost',
