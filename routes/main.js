@@ -63,7 +63,7 @@ module.exports = function(app) {
     //search
     app.get("/search-db", function(req, res) {
         //build query from search term
-        let keyword = [req.query.keyword];
+        let keyword = '%' + [req.query.keyword] + '%';
         let sqlquery =  "SELECT * FROM food WHERE name like ?";
         
         //query database
