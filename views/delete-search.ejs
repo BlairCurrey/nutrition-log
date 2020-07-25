@@ -11,7 +11,7 @@
     <%- include('partials/search-results') %>
     <!-- Delete food button -->
     <% if(foundFood.length > 0){ %>
-      <form method="POST" action="/delete/?_method=DELETE" onsubmit="return confirm('Do you really want to submit the form?');">
+      <form method="POST" action="/delete/?_method=DELETE" onsubmit="return confirm('Do you really want to delete <%= foundFood[0].name %>?');">
         <input type="hidden" name="food" value="<%= foundFood[0].name %>"/>
         <button type="submit"> Delete </button>
       </form>
