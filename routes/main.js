@@ -43,10 +43,10 @@ module.exports = function(app) {
     // Add new food to database
     app.post("/add", (req, res) => {
         // //build query
-        let entry = [req.body.name, req.body.unit, req.body.calories, 
-                       req.body.carbs, req.body.fat, req.body.protein, 
-                       req.body.salt, req.body.sugar];
-        let sqlquery = "INSERT INTO food VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)"
+        let entry = [req.body.name, req.body.unit, req.body.size, req.body.calories, 
+                     req.body.carbs, req.body.fat, req.body.protein, 
+                     req.body.salt, req.body.sugar];
+        let sqlquery = "INSERT INTO food VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                                      
         db.query(sqlquery, entry, (err, result)=>{
             if(err) {
@@ -64,7 +64,7 @@ module.exports = function(app) {
     app.get("/search-db", function(req, res) {
         //build query from search term
         let keyword = '%' + [req.query.keyword] + '%';
-        let sqlquery =  "SELECT * FROM food WHERE name like ?";
+        let sqlquery =  "SELECT * FROM food WHERE name LIKE ?";
         
         //query database
         db.query(sqlquery, keyword, (err, result) => {
@@ -113,11 +113,12 @@ module.exports = function(app) {
     
     //2 - submit the change prepared in 1 here
     app.put("/update", (req, res) => {
-        let entry = [req.body.name, req.body.unit, req.body.calories, 
+        let entry = [req.body.name, req.body.unit, req.body.size, req.body.calories, 
                      req.body.carbs, req.body.fat, req.body.protein, 
                      req.body.salt, req.body.sugar, req.body.name,];
         let sqlquery = `UPDATE food SET name = ?, 
-                                        unit = ?, 
+                                        unit = ?,
+                                        size = ?,
                                         calories = ?, 
                                         carbs = ?, 
                                         fat = ?, 
