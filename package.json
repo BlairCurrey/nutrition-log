@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Web application to track nutritional intake",
   "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "env NODE_ENV=production node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
