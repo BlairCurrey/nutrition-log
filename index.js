@@ -8,10 +8,10 @@ const port = process.env.PORT || 8089;
 //database connection configs for dev and production
 var db_config = {
     production: {
-        host     : 'us-cdbr-east-02.cleardb.com',
-        user     : 'bfebd2a53eef29',
-        password : 'c113c518',
-        database : 'heroku_730d5b06561ccc0',
+        host     : process.env.HOST,
+        user     : process.env.USER,
+        password : process.env.PASSWORD,
+        database : process.env.DATABASE,
         name     : 'production'
     },
     development: {
